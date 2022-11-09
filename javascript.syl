@@ -1,0 +1,1369 @@
+node Declaration: Statement  { }
+
+node Expression  {
+  
+}
+
+node Pattern  {
+  
+}
+
+node PrimaryExpression: Expression  {
+  
+}
+
+node Statement  {
+  
+}
+
+node Arguments  {
+  values: List<Expression | SpreadElement> 
+}
+
+node Array: PrimaryExpression  {
+  values: List<Expression | SpreadElement>
+}
+
+node ArrayPattern: Pattern  {
+  values: List<Pattern | AssignmentPattern> 
+}
+
+node EmptyArrayElemPattern { }
+
+node ArrowFunction: PrimaryExpression  {
+  async: AsyncModifier,
+  parameters: Identifier | List<FormalParameter>,
+  body : Expression | StatementBlock
+}
+
+node AssignmentExpression: Expression  {
+  left : ArrayPattern | Identifier | MemberExpression | ObjectPattern | ParenthesizedExpression | SubscriptExpression | Undefined,
+  right : Expression
+}
+
+node AssignmentPattern  {
+  left : Pattern,
+  right : Expression
+}
+
+node AssignmentOp { }
+
+node ModAssign: AssignmentOp { }
+
+node AndAssign: AssignmentOp { }
+
+node BitAndAssign: AssignmentOp { }
+
+node PowerAssign: AssignmentOp { }
+
+node TimesAssign: AssignmentOp { }
+
+node AddAssign: AssignmentOp { }
+
+node SubAssign: AssignmentOp { }
+
+node DivAssign: AssignmentOp { }
+
+node ShiftLeftAssign: AssignmentOp { }
+
+node ShiftRightAssign: AssignmentOp { }
+
+node UnsignedShiftRightAssign: AssignmentOp { }
+
+node NullCoalescingAssign: AssignmentOp { }
+
+node BitXorAssign: AssignmentOp { }
+
+node BitOrAssign: AssignmentOp { }
+
+node OrAssign: AssignmentOp { }
+
+node AugmentedAssignmentExpression: Expression  {
+  left : Expression,
+  operator : AssignmentOp,
+  right : Expression
+}
+
+node AwaitExpression: Expression  {
+
+}
+
+node BinaryOp { }
+
+node NotEq: BinaryOp { }
+
+node NotEqEq: BinaryOp { }
+
+node Mod: BinaryOp { }
+
+node BitAnd: BinaryOp { }
+
+node And: BinaryOp { }
+
+node Times: BinaryOp { }
+
+node Power: BinaryOp { }
+
+node Add: BinaryOp { }
+
+node Sub: BinaryOp { }
+
+node Div: BinaryOp { }
+
+node LessThan: BinaryOp { }
+
+node ShiftLeft: BinaryOp { }
+
+node LessEq: BinaryOp { }
+
+node EqEq: BinaryOp { }
+
+node EqEqEq: BinaryOp { }
+
+node GreaterThan: BinaryOp { }
+
+node GreaterEq: BinaryOp { }
+
+node ShiftRight: BinaryOp { }
+
+node UnsignedShiftRight: BinaryOp { }
+
+node NullCoalescing: BinaryOp { }
+
+node BitXor: BinaryOp { }
+
+node In: BinaryOp { }
+
+node Instanceof: BinaryOp { }
+
+node BitOr: BinaryOp { }
+
+node Or: BinaryOp { }
+
+node BinaryExpression: Expression  {
+  left : Expression,
+  operator : BinaryOp,
+  right : Expression
+}
+
+node BreakStatement: Statement  {
+  label : StatementIdentifier
+  
+}
+
+node CallExpression: PrimaryExpression  {
+  callee : Expression,
+  arguments : Arguments | TemplateString,
+  optional_chain : OptionalChain
+}
+
+node CatchClause  {
+  body : StatementBlock,
+  parameter : ArrayPattern | Identifier | ObjectPattern
+  
+}
+
+node Class: PrimaryExpression  {
+  decorators : List<Decorator>,
+  heritage: ClassHeritage,
+  body : ClassBody,
+  name : Identifier
+}
+
+node ClassBody  {
+  members : List<FieldDefinition | MethodDefinition>
+}
+
+node ClassDeclaration: Declaration  {
+  decorators : List<Decorator>,
+  body : ClassBody,
+  heritage: ClassHeritage,
+  name : Identifier
+}
+
+node ClassHeritage  {
+  
+}
+
+node ComputedPropertyName  {
+  
+}
+
+node ContinueStatement: Statement  {
+  label : StatementIdentifier
+  
+}
+
+node DebuggerStatement: Statement  {
+  
+}
+
+node Decorator  {
+  value: Identifier | DecoratorCallExpression | DecoratorMemberExpression 
+}
+
+node DecoratorMemberExpression {
+  object: Identifier | DecoratorMemberExpression,
+  property: Identifier
+}
+
+node DecoratorCallExpression {
+  function: Identifier | DecoratorMemberExpression,
+  arguments: Arguments 
+}
+
+node DoStatement: Statement  {
+  body : Statement,
+  condition : ParenthesizedExpression
+  
+}
+
+node ElseClause  {
+  
+}
+
+node EmptyStatement: Statement  {
+  
+}
+
+node ExportClause  {
+  
+}
+
+node ExportSpecifier  {
+  alias : Identifier,
+  name : Identifier
+  
+}
+
+node ExportStatement: Statement  {
+  decorators: List<Decorator>,
+  spec: ExportSpec
+}
+
+node ExportSpec { }
+
+node ExportListSpec: ExportSpec {
+  names: List<AliasedName>
+}
+
+node ModuleExportSpec: ExportSpec {
+  names: List<AliasedName>,
+  source: String
+}
+
+node DefaultExportSpec: ExportSpec {
+  value: Expression | Declaration
+}
+
+node DeclExportSpec: ExportSpec {
+  value: Declaration
+} 
+
+node AliasedName {
+  name: Identifier,
+  alias: Identifier | String
+}
+
+node FromExportSpec: ExportSpec {
+  source: String
+}
+
+node ExpressionStatement: Statement  {
+  
+}
+
+node StaticModifier { }
+
+node FieldDefinition  {
+  decorators : List<Decorator>,
+  static: StaticModifier,
+  property : ComputedPropertyName | Number | PrivatePropertyIdentifier | PropertyIdentifier | String,
+  value : Expression
+}
+
+node FinallyClause  {
+  body : StatementBlock
+  
+}
+
+node ForInStatement: Statement  {
+  body : Statement,
+  header: ForInHeader
+}
+
+node ForInHeader {
+  kind : Const | Let | Var,
+  left : ArrayPattern | Identifier | MemberExpression | ObjectPattern | ParenthesizedExpression | SubscriptExpression | Undefined,
+  value : Expression,
+  operator : In | Of,
+  right : Expression | SequenceExpression
+}
+
+node Of { }
+
+node ForStatement: Statement  {
+  body : Statement,
+  condition : Statement,
+  increment : Expression | SequenceExpression,
+  initializer : Statement
+  
+}
+
+node FormalParameter { 
+  value: Pattern | AssignmentPattern
+}
+
+node FormalParameters {
+  params: List<FormalParameter>
+}
+
+node AsyncModifier { }
+
+node Function: PrimaryExpression  {
+  async: AsyncModifier,
+  body : StatementBlock,
+  name : Identifier,
+  parameters : List<FormalParameter>
+}
+
+node FunctionDeclaration: Declaration  {
+  async: AsyncModifier,
+  body : StatementBlock,
+  name : Identifier,
+  parameters : List<FormalParameter>
+}
+
+node GeneratorFunction: PrimaryExpression  {
+  async: AsyncModifier,
+  body : StatementBlock,
+  name : Identifier,
+  parameters : FormalParameters
+}
+
+node GeneratorFunctionDeclaration: Declaration  {
+  async: AsyncModifier,
+  body : StatementBlock,
+  name : Identifier,
+  parameters : FormalParameters
+}
+
+node IfStatement: Statement  {
+  alternative : ElseClause,
+  condition : Expression,
+  consequence : Statement
+}
+
+node ImportSpecifier  {
+  alias : Identifier,
+  name : Identifier
+}
+
+node ImportStatement: Statement  {
+  spec: ImportSpec,
+  source : String
+}
+
+node ImportKw { }
+
+node WildcardImportSpec: ImportSpec { }
+
+node NamedImportsSpec: ImportSpec {
+  default: Identifier, 
+  import: NamespaceImport | List<AliasedName>
+}
+
+node NamespaceImport {
+  alias: Identifier
+}
+
+node JsxAttribute  {
+  name: Identifier,
+  value: String | JsxExpression | JsxElement | JsxFragment
+}
+
+node JsxIdentifier: Identifier { }
+
+node JsxClosingElement  {
+  name : Identifier | JsxNamespaceName | NestedIdentifier
+  
+}
+
+node JsxElement: Expression  {
+  close_tag : JsxClosingElement,
+  childs: List<JsxElement | JsxFragment | JsxText | JsxExpression>,
+  open_tag : JsxOpeningElement
+}
+
+node JsxExpression { }
+
+node JsxFragment: Expression  {
+  childs: List<JsxElement | JsxFragment | JsxText | JsxExpression>
+}
+
+node JsxNamespaceName  {
+  
+}
+
+node JsxOpeningElement  {
+  attribute : List<JsxAttribute | JsxExpression>,
+  name : Identifier | JsxNamespaceName | NestedIdentifier
+  
+}
+
+node JsxSelfClosingElement: Expression  {
+  attribute : List<JsxAttribute | JsxExpression>,
+  name : Identifier | JsxNamespaceName | NestedIdentifier
+  
+}
+
+node LabeledStatement: Statement  {
+  body : Statement,
+  label : StatementIdentifier
+  
+}
+
+node LexicalDeclaration: Declaration  {
+  kind : Const | Let,
+  decls: List<VariableDeclarator> 
+}
+
+node MemberExpression: PrimaryExpression  {
+  object : Expression,
+  optional_chain : OptionalChain,
+  property : PrivatePropertyIdentifier | PropertyIdentifier
+}
+
+node MetaProperty: PrimaryExpression  {
+  
+}
+
+node GetModifier { }
+
+node SetModifier { }
+
+node GenModifier { }
+
+node MethodDefinition {
+  decorators : List<Decorator>,
+  staticModifier: StaticModifier,
+  asyncModifier: AsyncModifier,
+  propModifier: GetModifier | SetModifier | GenModifier,
+  modifier: AsyncModifier | StaticModifier,
+  name : ComputedPropertyName | Number | PrivatePropertyIdentifier | PropertyIdentifier | String,
+  parameters : FormalParameters,
+  body : StatementBlock
+}
+
+node NamedImports  {
+  
+}
+
+node NamespaceExport  {
+  
+}
+
+node NestedIdentifier  {
+  
+}
+
+node NewExpression: Expression  {
+  constructor : Expression,
+  arguments : Arguments
+}
+
+node Object: PrimaryExpression  {
+  values: List<Pair | SpreadElement | MethodDefinition | Identifier | ReservedIdentifier>
+}
+
+node ObjectAssignmentPattern  {
+  left : ArrayPattern | ObjectPattern | ShorthandPropertyIdentifierPattern,
+  right : Expression
+  
+}
+
+node ObjectPattern: Pattern  {
+  values: List<PairPattern | RestPattern | ObjectAssignmentPattern | Identifier | ReservedIdentifier> 
+}
+
+node Pair  {
+  key : ComputedPropertyName | Number | PrivatePropertyIdentifier | PropertyIdentifier | String,
+  value : Expression
+  
+}
+
+node PairPattern  {
+  key : ComputedPropertyName | Number | PrivatePropertyIdentifier | PropertyIdentifier | String,
+  value : AssignmentPattern | Pattern
+  
+}
+
+node ParenthesizedExpression: PrimaryExpression  {
+  
+}
+
+node Program  {
+   hashbang: HashBang,
+   statements: List<Statement>
+}
+
+node HashBang { }
+
+node Regex: PrimaryExpression { 
+  pattern: RegexPattern,
+  flags: RegexFlags
+}
+
+node RegexPattern { }
+
+node RegexFlags { }
+
+node RestPattern: Pattern {  }
+
+node ReturnStatement: Statement  {
+  
+}
+
+node SequenceExpression  {
+  left : Expression,
+  right : Expression | SequenceExpression
+  
+}
+
+node SpreadElement  {
+  
+}
+
+node StatementBlock: Statement  {
+  statements: List<Statement> 
+}
+
+node String: PrimaryExpression  {
+  
+}
+
+node SubscriptExpression: PrimaryExpression  {
+  object : Expression,
+  optional_chain : OptionalChain,
+  index : Expression | SequenceExpression
+}
+
+node SwitchBody  {
+  cases: List<SwitchCase> 
+}
+
+node SwitchCase  {
+  body : List<Statement>,
+  value : Expression | SequenceExpression
+  
+}
+
+node SwitchDefault  {
+  body : List<Statement>
+  
+}
+
+node SwitchStatement: Statement  {
+  body : SwitchBody,
+  value : ParenthesizedExpression
+  
+}
+
+node TemplateString: PrimaryExpression  {
+  
+}
+
+node TemplateSubstitution  {
+  
+}
+
+node TernaryExpression: Expression  {
+  alternative : Expression,
+  condition : Expression,
+  consequence : Expression
+  
+}
+
+node ThrowStatement: Statement  {
+  
+}
+
+node TryStatement: Statement  {
+  body : StatementBlock,
+  finalizer : FinallyClause,
+  handler : CatchClause
+  
+}
+
+node UnaryOp { }
+
+node Not: UnaryOp { }
+
+node BitNot: UnaryOp { }
+
+node Plus: UnaryOp { }
+
+node Minus: UnaryOp { }
+
+node Delete: UnaryOp { }
+
+node Typeof: UnaryOp { }
+
+node Void: UnaryOp { }
+
+node UnaryExpression: Expression  {
+  argument : Expression,
+  operator : UnaryOp 
+}
+
+
+
+node UpdateOp { }
+
+node Increment: UpdateOp { }
+
+node Decrement: UpdateOp { }
+
+node UpdateExpression: Expression  {
+  argument : Expression,
+  operator : UpdateOp 
+}
+
+node VarKind { }
+
+node Const: VarKind { }
+
+node Let: VarKind { }
+
+node Var: VarKind { }
+
+node VariableDeclaration: Declaration  {
+  decls: List<VariableDeclarator> 
+}
+
+node VariableDeclarator  {
+  name : ArrayPattern | Identifier | ObjectPattern,
+  value : Expression
+}
+
+node WhileStatement: Statement  {
+  body : Statement,
+  condition : ParenthesizedExpression
+  
+}
+
+node WithStatement: Statement  {
+  body : Statement,
+  object : ParenthesizedExpression
+  
+}
+
+node YieldExpression: Expression  {
+  
+}
+
+node Comment  {
+  
+}
+
+node EscapeSequence  {
+  
+}
+
+node False: PrimaryExpression  {
+  
+}
+
+node HashBangLine  {
+  
+}
+
+node Identifier: PrimaryExpression  { }
+
+node ReservedIdentifier: Identifier { }
+
+node JsxText  {
+  
+}
+
+node Null: PrimaryExpression  {
+  
+}
+
+node Number: PrimaryExpression  { }
+
+node BigInt: PrimaryExpression { }
+
+node OptionalChain  {
+  
+}
+
+node PrivatePropertyIdentifier: Identifier  {
+  
+}
+
+node PropertyIdentifier  {
+  
+}
+
+
+node ShorthandPropertyIdentifier  {
+  
+}
+
+node ShorthandPropertyIdentifierPattern  {
+  
+}
+
+node StatementIdentifier  {
+  
+}
+
+node StringFragment  {
+  
+}
+
+node Super: PrimaryExpression  {
+  
+}
+
+node This: PrimaryExpression  {
+  
+}
+
+node True: PrimaryExpression  {
+  
+}
+
+node Undefined: PrimaryExpression  {
+  
+}
+
+ignore term WHITESPACE = `[\s--[\n(\r\n)]]`
+ignore term NEW_LINE = `\n|(\r\n)`
+
+term DOUBLE_STRING_CONTENT = `"([^"\\]|(\\([^xu0-7]|[0-7]{1,3}|(x[0-9a-fA-F]{2})|(x[0-9a-fA-F]{4})|(u[0-9a-fA-F]+))))*"`
+term SINGLE_STRING_CONTENT = `'([^'\\]|(\\([^xu0-7]|[0-7]{1,3}|(x[0-9a-fA-F]{2})|(x[0-9a-fA-F]{4})|(u[0-9a-fA-F]+))))*'`
+term TEMPLATE_STRING_CONTENT =  `\`[^\`\\]+\``
+
+term DECIMAL_LITERAL = `(\+|-)?[0-9][0-9_]*(\.?)[0-9_]*((e|E)(\+|-)?[0-9_]*)?`
+term HEXADECIMAL_INTEGER = `0x[0-9a-fA-F][0-9a-fA-F_]*`
+term OCTAL_INTEGER = `0o[0-7][0-7_]*`
+term BINARY_INTEGER = `0b[0-1][0-1_]*`
+
+term BIG_HEXADECIMAL_INTEGER = `0x[0-9a-fA-F][0-9a-fA-F_]*n`
+term BIG_OCTAL_INTEGER = `0o[0-7][0-7_]*n`
+term BIG_BINARY_INTEGER = `0b[0-1][0-1_]*n`
+term BIG_DECIMAL_INTEGER = `(\+|-)?[0-9][0-9_]*n`
+
+comment term LINE_COMMENT = `//.*`
+comment term BLOCK_COMMENT = nested(start = '/*', end = '*/')
+
+rule main = Program { hashbang@hashbang? statements@sepByTr([NEW_LINE, ';'], statement)  }
+
+rule hashbang = HashBang { `#!.*` }
+
+rule export_statement = ExportStatement { decorators@decorator* 'export' spec@export_spec }
+
+rule export_spec = 
+    ExportListSpec { '{' names@sepByTr(',', aliased_name) '}' }
+  | ModuleExportSpec { '{' names@sepByTr(',', aliased_name) 'from' source@string '}' }  
+  | DefaultExportSpec { 'default' value@expression }
+  | DefaultExportSpec { 'default' value@declaration }
+  | DeclExportSpec { value@declaration }
+  | FromExportSpec { 'from' source@string }
+ 
+rule aliased_name = 
+    AliasedName { name@identifier }
+  | AliasedName { name@identifier 'as' alias@identifier } 
+ 
+rule declaration =
+    function_declaration  
+  | generator_function_declaration  
+  | class_declaration  
+  | lexical_declaration  
+  | variable_declaration  
+ 
+rule import_statement =
+    ImportStatement { 'import' spec@import_spec 'from' source@string }
+  | ImportStatement { 'import' source@string  }
+
+rule import_spec = 
+    WildcardImportSpec { '*' }
+  | NamedImportsSpec { default@identifier }    
+  | NamedImportsSpec { default@identifier? import@namespace_import }    
+  | NamedImportsSpec { default@identifier? '{' import@sepByTr(',', aliased_name) '}' }    
+ 
+rule namespace_import = NamespaceImport { '*' 'as' alias@identifier }
+
+rule statement =
+    export_statement  
+  | import_statement  
+  | debugger_statement  
+  | expression_statement  
+  | declaration  
+  | statement_block  
+  | if_statement  
+  | switch_statement  
+  | for_statement  
+  | for_in_statement  
+  | while_statement  
+  | do_statement  
+  | try_statement  
+  | with_statement  
+  | break_statement  
+  | continue_statement  
+  | return_statement  
+  | throw_statement  
+  | empty_statement  
+  | labeled_statement  
+ 
+rule expression_statement = expressions
+
+rule variable_declaration =
+    VariableDeclaration { 'var' decls@sepBy(',', variable_declarator) }
+
+rule lexical_declaration =
+    LexicalDeclaration { kind@lexical_declaration_kind decls@sepBy(',', variable_declarator) }
+
+rule var_kind = var_kind_rule | lexical_declaration_kind
+
+rule var_kind_rule = Var { 'var' }
+
+rule lexical_declaration_kind = Let { 'let' } | Const { 'const' }
+ 
+rule variable_declarator =
+    VariableDeclarator { name@variable_declarator_name '=' value@expression }
+  | VariableDeclarator { name@variable_declarator_name }
+
+rule variable_declarator_name = identifier | destructuring_pattern
+ 
+rule statement_block = StatementBlock { '{' statements@sepByTr([NEW_LINE, ';'], statement) '}' }
+ 
+rule else_clause = ElseClause { 'else' statement  }
+
+rule if_statement =
+    IfStatement { 'if' '(' condition@expression ')' consequence@statement alternative@else_clause?  }
+  | IfStatement { 'if' '(' condition@expression ')' consequence@statement ';' alternative@else_clause  }
+ 
+rule switch_statement =
+    SwitchStatement { 'switch' value@parenthesized_expression body@switch_body  }
+
+rule for_statement =
+    ForStatement { 'for' '(' initializer@for_initializer? ';' condition@expression_statement? ';' increment@expressions? ')' body@statement  }
+
+rule for_initializer = lexical_declaration | variable_declaration | expression_statement
+ 
+rule for_in_statement =
+    ForInStatement { 'for' 'await' header@for_in_header body@statement  }
+  | ForInStatement { 'for' header@for_in_header body@statement  }
+ 
+
+rule for_in_header =
+    ForInHeader { '(' left@lhs_expression operator@for_header_operator right@expressions ')'  }
+  | ForInHeader { '(' left@parenthesized_expression operator@for_header_operator right@expressions ')'  }
+  | ForInHeader { '(' kind@var_kind_rule left@for_header_left '=' value@expression operator@for_header_operator right@expressions ')'  }
+  | ForInHeader { '(' kind@var_kind left@for_header_left  operator@for_header_operator right@expressions ')'  }
+
+
+rule for_header_left = 
+    identifier
+  | destructuring_pattern  
+ 
+rule for_header_operator = in_rule | Of { 'of' }
+
+rule while_statement =
+    WhileStatement { 'while' condition@parenthesized_expression body@statement  }
+
+rule do_statement =
+    DoStatement { 'do' body@statement 'while' condition@parenthesized_expression  }
+
+rule try_statement =
+    TryStatement { 'try' body@statement_block handler@catch_clause finalizer@finally_clause  }
+  | TryStatement { 'try' body@statement_block finalizer@finally_clause  }
+  | TryStatement { 'try' body@statement_block handler@catch_clause   }
+  | TryStatement { 'try' body@statement_block  }
+ 
+rule with_statement =
+    WithStatement { 'with' object@parenthesized_expression body@statement  }
+
+rule break_statement =
+    BreakStatement { 'break' label@identifier? }
+
+rule continue_statement =
+    ContinueStatement { 'continue' label@identifier? }
+
+rule debugger_statement =
+    DebuggerStatement { 'debugger' }
+
+rule return_statement =
+    ReturnStatement { 'return' expressions }
+  | ReturnStatement { 'return'  }
+ 
+rule throw_statement =
+    ThrowStatement { 'throw' expressions }
+
+rule empty_statement =
+    EmptyStatement { ';'  }
+
+rule labeled_statement =
+    LabeledStatement { label@identifier ':' body@statement  }
+  | LabeledStatement { label@reserved_identifier ':' body@statement  }
+ 
+rule switch_body =
+    SwitchBody { '{' cases@switch_case* '}'  }
+
+rule switch_case =
+    SwitchCase { 'case' value@expressions ':' body@statement*  }
+
+rule switch_default =
+    SwitchDefault { 'default' ':' body@statement*  }
+
+rule catch_clause =
+    CatchClause { 'catch' '(' parameter@identifier ')' body@statement_block  }
+  | CatchClause { 'catch' '(' parameter@destructuring_pattern ')' body@statement_block  }
+  | CatchClause { 'catch'  body@statement_block  }
+ 
+rule finally_clause =
+    FinallyClause { 'finally' body@statement_block  }
+
+rule parenthesized_expression =
+    ParenthesizedExpression { '(' expressions ')'  }
+
+rule expressions =
+    expression  
+  | sequence_expression  
+ 
+rule expression =
+    primary_expression  
+  | jsx_element  
+  | jsx_fragment  
+  | assignment_expression  
+  | augmented_assignment_expression  
+  | await_expression  
+  | unary_expression  
+  | binary_expression  
+  | ternary_expression  
+  | update_expression  
+  | new_expression  
+  | yield_expression  
+  | arrow_function  
+  | generator_function  
+ 
+rule primary_expression =
+    subscript_expression  
+  | member_expression  
+  | parenthesized_expression  
+  | identifier  
+  | reserved_identifier  
+  | this_rule  
+  | super_rule 
+  | number  
+  | string  
+  | template_string  
+  | regex  
+  | true_rule 
+  | false_rule 
+  | null_rule 
+  | import_statement
+  | object  
+  | array  
+  | function_rule  
+  | class_rule  
+  | meta_property  
+  | call_expression  
+  | ImportKw { 'import' }
+ 
+rule yield_expression =
+    YieldExpression { 'yield' '*' expression  }
+  | YieldExpression { 'yield' expression  }
+  | YieldExpression { 'yield'   }
+ 
+rule object = Object { '{' values@sepByTr(',', object_value) '}' }
+
+rule object_value = 
+    pair
+  | spread_element
+  | method_definition
+  | identifier
+  | reserved_identifier   
+ 
+rule object_pattern = ObjectPattern { '{' values@sepByTr(',', object_pattern_value) '}' }
+
+rule object_pattern_value = 
+    pair_pattern
+  | rest_pattern
+  | object_assignment_pattern
+  | identifier
+  | reserved_identifier  
+ 
+rule assignment_pattern =
+    AssignmentPattern { left@pattern '=' right@expression  }
+
+rule object_assignment_pattern =
+    ObjectAssignmentPattern { left@reserved_identifier '=' right@expression  }
+  | ObjectAssignmentPattern { left@identifier '=' right@expression  }
+  | ObjectAssignmentPattern { left@destructuring_pattern '=' right@expression  }
+ 
+rule array = Array { '[' values@sepByTr(',', array_value) ']' }
+
+rule array_value = expression | spread_element
+ 
+rule array_pattern = 
+    ArrayPattern { '[' empty_array_elem_pattern values@sepByTr(',', array_pattern_value) ']' }
+  | ArrayPattern { '[' values@sepByTr(',', array_pattern_value) ']' }
+
+rule array_pattern_value = pattern | assignment_pattern | empty_array_elem_pattern
+
+rule empty_array_elem_pattern = EmptyArrayElemPattern { ',' }
+ 
+rule jsx_element =
+    JsxElement { open_tag@jsx_opening_element childs@jsx_child* close_tag@jsx_closing_element  }
+  | JsxSelfClosingElement { '<' name@jsx_element_name attribute@jsx_attribute* '/' '>'  }  
+
+rule jsx_fragment =
+    JsxFragment { '<' '>' childs@jsx_child* '<' '/' '>'  }
+
+rule jsx_expression =
+    JsxExpression { '{' expression '}'  }
+  | JsxExpression { '{' sequence_expression '}'  }
+  | JsxExpression { '{' spread_element '}'  }
+  | JsxExpression { '{'  '}'  }
+ 
+rule jsx_child =
+    jsx_text  
+  | jsx_element  
+  | jsx_fragment  
+  | jsx_expression  
+ 
+rule jsx_text = JsxText { `[^\{\}<>]+` } 
+ 
+rule jsx_opening_element =
+    JsxOpeningElement { '<' name@jsx_element_name attribute@jsx_attribute* '>'  }
+
+rule jsx_identifier = JsxIdentifier { `[a-zA-Z_$][a-zA-Z\d_$]*-[a-zA-Z\d_$\-]` } | identifier  
+ 
+rule nested_identifier =
+    NestedIdentifier { identifier '.' identifier  }
+  | NestedIdentifier { nested_identifier '.' identifier  }
+ 
+rule jsx_namespace_name =
+    JsxNamespaceName { jsx_identifier ':' jsx_identifier  }
+
+rule jsx_element_name = jsx_identifier | nested_identifier | jsx_namespace_name  
+ 
+rule jsx_closing_element =
+    JsxClosingElement { '<' '/' name@jsx_element_name '>'  }
+
+rule jsx_attribute =
+    JsxAttribute { name@jsx_attribute_name '=' value@jsx_attribute_value }
+  | JsxAttribute { name@jsx_attribute_name } 
+  | jsx_expression  
+ 
+rule jsx_attribute_name = jsx_identifier | jsx_namespace_name  
+ 
+rule jsx_attribute_value =
+    string  
+  | jsx_expression  
+  | jsx_element  
+  | jsx_fragment  
+ 
+rule class_rule =
+    Class { decorators@decorator* 'class' name@identifier heritage@class_heritage? body@class_body  }
+ 
+rule class_declaration =
+    ClassDeclaration { decorators@decorator* 'class' name@identifier heritage@class_heritage? body@class_body  }
+ 
+rule class_heritage =
+    ClassHeritage { 'extends' expression  }
+
+rule async_modifier = AsyncModifier { 'async' }    
+
+rule function_rule =
+    Function { async@async_modifier? 'function' name@identifier? parameters@formal_parameters body@statement_block  }
+ 
+rule function_declaration =
+    FunctionDeclaration { async@async_modifier? 'function' name@identifier parameters@formal_parameters body@statement_block }
+ 
+rule generator_function =
+    GeneratorFunction { async@async_modifier? 'function' '*' name@identifier? parameters@formal_parameters body@statement_block  }
+ 
+rule generator_function_declaration =
+    GeneratorFunctionDeclaration { async@async_modifier? 'function' '*' name@identifier parameters@formal_parameters body@statement_block }
+ 
+rule arrow_function =
+    [2] ArrowFunction { async@async_modifier? parameters@arrow_function_params '=>' body@arrow_function_body  }
+
+rule arrow_function_params = identifier | reserved_identifier | formal_parameters
+
+rule arrow_function_body = expression | statement_block
+ 
+rule formal_parameter = FormalParameter { value@formal_parameter_value  }
+
+rule formal_parameter_value = pattern | assignment_pattern
+ 
+rule optional_chain = OptionalChain { '?.'  }
+
+rule call_expression =
+    [17] CallExpression { callee@primary_expression optional_chain@optional_chain? arguments@call_expression_args  }
+
+rule call_expression_args = arguments | template_string
+ 
+rule new_expression =
+  [17, right] NewExpression { 'new' constructor@new_expression_constructor arguments@arguments }
+
+rule new_expression_constructor = primary_expression | new_expression
+ 
+rule await_expression = AwaitExpression { 'await' expression  }
+
+rule member_expression =
+    [17, left] MemberExpression { object@expression '.' property@member_expression_property  }
+  | [17, left] MemberExpression { object@expression optional_chain@optional_chain property@member_expression_property }  
+ 
+rule member_expression_property = identifier | private_property_identifier
+
+rule subscript_expression =
+   SubscriptExpression { object@primary_expression optional_chain@optional_chain? '[' index@expressions ']'  }
+ 
+rule lhs_expression =
+    member_expression  
+  | subscript_expression  
+  | identifier  
+  | reserved_identifier  
+  | destructuring_pattern  
+ 
+rule assignment_expression =
+    [2, right] AssignmentExpression { left@assignment_expression_left '=' right@expression  }
+
+rule assignment_expression_left = parenthesized_expression | lhs_expression
+ 
+rule augmented_assignment_expression =
+    AugmentedAssignmentExpression { left@augmented_assignment_lhs operator@augmented_assignment_op right@expression  }
+
+rule augmented_assignment_lhs =
+    member_expression  
+  | subscript_expression  
+  | reserved_identifier  
+  | identifier  
+  | parenthesized_expression 
+
+rule augmented_assignment_op = 
+    AddAssign { '+=' }
+  | SubAssign { '-=' }
+  | TimesAssign { '*=' }
+  | DivAssign { '/=' }
+  | ModAssign { '%=' }
+  | BitXorAssign { '^=' }
+  | BitAndAssign { '&=' }
+  | BitOrAssign { '|=' } 
+  | ShiftRightAssign { '>>=' }
+  | UnsignedShiftRightAssign { '>>>=' }
+  | ShiftLeftAssign { '<<=' }
+  | PowerAssign { '**=' }
+  | AndAssign { '&&=' }
+  | OrAssign { '||=' }
+  | NullCoalescingAssign { '??=' }
+
+rule destructuring_pattern = object_pattern | array_pattern  
+ 
+rule spread_element = SpreadElement { '...' expression  }
+
+rule ternary_expression =
+   [2] TernaryExpression { condition@expression '?' consequence@expression ':' alternative@expression  }
+
+rule binary_expression =
+    [3, left] BinaryExpression { left@expression operator@or right@expression  }
+  | [3, left] BinaryExpression { left@expression operator@null_coalescing right@expression  }
+  | [4, left] BinaryExpression { left@expression operator@and right@expression  }
+  | [5, left] BinaryExpression { left@expression operator@bit_or right@expression  }
+  | [6, left] BinaryExpression { left@expression operator@bit_xor right@expression  }
+  | [7, left] BinaryExpression { left@expression operator@bit_and right@expression  }
+  | [8, left] BinaryExpression { left@expression operator@eq_ops right@expression  }
+  | [9, left] BinaryExpression { left@expression operator@cmp_ops right@expression  }
+  | [9, left] BinaryExpression { left@expression operator@in_rule right@expression  }
+  | [9, left] BinaryExpression { left@expression operator@instance_of right@expression  }
+  | [10, left] BinaryExpression { left@expression operator@bit_shift_ops right@expression  }
+  | [11, left] BinaryExpression { left@expression operator@add_ops right@expression  }
+  | [12, left] BinaryExpression { left@expression operator@mul_ops right@expression  }
+  | [13, right] BinaryExpression { left@expression operator@power right@expression  }
+
+rule or = Or { '||' }
+
+rule null_coalescing = NullCoalescing { '??' }
+
+rule and = And { '&&' }
+ 
+rule bit_or = BitOr { '|' }
+
+rule bit_xor = BitXor { '^' }
+
+rule bit_and = BitAnd { '&' }
+
+rule eq_ops = EqEq { '==' } | EqEqEq { '===' } | NotEq { '!=' } | NotEqEq { '!==' }
+
+rule cmp_ops = LessThan { '<' } | LessEq { '<=' } | GreaterThan { '>' } | GreaterEq { '>=' }
+
+rule in_rule = In { 'in' }
+
+rule instance_of = Instanceof { 'instanceof' }
+
+rule bit_shift_ops = ShiftLeft { '<<' } | ShiftRight { '>>' } | UnsignedShiftRight { '>>>' }
+
+rule add_ops = Add { '+' } | Sub { '-' }
+
+rule mul_ops = Times { '*' } | Div { '/' } | Mod { '%' }
+
+rule power = Power { '**' }
+
+rule unary_expression =
+    [9] UnaryExpression { operator@unary_op argument@expression  }
+
+rule unary_op = 
+    Not { '!' } 
+  | BitNot { '~' }
+  | Minus { '-' }
+  | Plus { '+' }
+  | Typeof { 'typeof' }
+  | Void { 'void' }
+  | Delete { 'delete' }
+
+rule update_expression =
+    [15] UpdateExpression { argument@expression operator@update_op  }
+  | [15] UpdateExpression { operator@update_op argument@expression  }
+
+rule update_op = Increment { '++' } | Decrement { '--' }
+ 
+rule sequence_expression =
+    SequenceExpression { left@expression ',' right@sequence_expression  }
+ | SequenceExpression { left@expression ',' right@expression  }
+ 
+rule string = String { DOUBLE_STRING_CONTENT } | String { SINGLE_STRING_CONTENT }
+
+rule reserved_identifier =
+    ReservedIdentifier { 'get'  }
+  | ReservedIdentifier { 'set'  }
+  | ReservedIdentifier { 'async'  }
+  | ReservedIdentifier { 'static'  }
+  | ReservedIdentifier { 'export'  }
+
+rule template_string = TemplateString { TEMPLATE_STRING_CONTENT }
+
+rule regex = Regex { '/' pattern@regex_pattern flags@regex_flags }
+
+rule regex_pattern = RegexPattern { `((\[((\\.)|([^\\\[\n]))*\])|(\\.)|([^\/\\\[\n]))+`}
+
+rule regex_flags = RegexFlags { `/[a-z]*`}
+ 
+rule number =
+    Number { DECIMAL_LITERAL }
+  | Number { HEXADECIMAL_INTEGER }  
+  | Number { OCTAL_INTEGER }
+  | Number { BINARY_INTEGER }
+  | big_int
+
+rule big_int = 
+    BigInt { BIG_DECIMAL_INTEGER } 
+  | BigInt { BIG_HEXADECIMAL_INTEGER }  
+  | BigInt { BIG_OCTAL_INTEGER }  
+  | BigInt { BIG_BINARY_INTEGER }
+
+rule big_int_number = 
+    Number { DECIMAL_INTEGER }
+  | Number { HEXADECIMAL_INTEGER }  
+  | Number { OCTAL_INTEGER }  
+  | Number { BINARY_INTEGER }  
+
+term IDENTIFIER_CONTENT = `[\p{Alphabetic}_\$][[\p{L}\p{Nl}\p{Nd}_]]*` 
+term PRIVATE_IDENTIFIER_CONTENT = `#[\p{Alphabetic}_][[\p{L}\p{Nl}\p{Nd}_]]*`
+
+rule identifier = 
+    undefined_rule 
+  | Identifier { IDENTIFIER_CONTENT }
+ 
+rule private_property_identifier =
+    PrivatePropertyIdentifier { PRIVATE_IDENTIFIER_CONTENT }
+
+rule meta_property = MetaProperty { 'new' '.' 'target'  }
+
+rule this_rule = This { 'this'  }
+
+rule super_rule = Super { 'super'  }
+
+rule true_rule = True { 'true'  }
+
+rule false_rule = False { 'false'  }
+
+rule null_rule = Null { 'null'  }
+
+rule undefined_rule = Undefined { 'undefined' }
+
+rule arguments = Arguments { '(' values@sepByTr(',', argument_value) ')'  }
+
+rule argument_value = expression | spread_element
+ 
+rule decorator =
+    Decorator { '@' identifier  }
+  | Decorator { '@' decorator_member_expression  }
+  | Decorator { '@' decorator_call_expression  }
+ 
+rule decorator_member_expression =
+    DecoratorMemberExpression { object@decorator_member_object '.' property@identifier  }
+
+rule decorator_member_object = identifier | decorator_member_expression 
+ 
+rule decorator_call_expression =
+    DecoratorCallExpression { function@decorator_call_function arguments@arguments  }
+
+rule decorator_call_function = identifier | decorator_member_expression
+ 
+rule class_body =
+    ClassBody { '{' members@sepByTr([NEW_LINE, ';'], class_member_def) '}'  }
+
+rule class_member_def = method_definition | field_definition
+
+rule field_definition =
+    FieldDefinition { decorators@decorator* static@static_modifier? property@property_name '=' value@expression  }
+  | FieldDefinition { decorators@decorator* static@static_modifier? property@property_name }
+
+rule static_modifier = StaticModifier { 'static' } 
+
+rule formal_parameters =
+    FormalParameters { '(' params@sepByTr(',', formal_parameter) ')'  }
+ 
+rule pattern =
+    lhs_expression  
+  | rest_pattern  
+ 
+rule rest_pattern =
+    RestPattern { '...' lhs_expression  }
+
+rule method_definition =
+    MethodDefinition { 
+      decorators@decorator* 
+      staticModifier@static_modifier? 
+      asyncModifier@async_modifier? 
+      propModifier@prop_modifier? 
+      name@property_name 
+      parameters@formal_parameters 
+      body@statement_block  
+    }
+
+rule prop_modifier = GetModifier { 'get' } | SetModifier { 'set' } | GenModifier { '*' }
+
+rule pair =
+    Pair { key@property_name ':' value@expression  }
+
+rule pair_pattern =
+   PairPattern { key@property_name ':' value@pattern  }
+ | PairPattern { key@property_name ':' value@assignment_pattern  }
+ 
+rule property_name =
+    identifier  
+  | reserved_identifier  
+  | private_property_identifier  
+  | string  
+  | number  
+  | computedproperty_name  
+ 
+rule computedproperty_name =
+    ComputedPropertyName { '[' expression ']'  }
